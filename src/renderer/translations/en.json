@@ -346,6 +346,10 @@
       "title": "Configure game bezels",
       "description": "Use EmuDeck's pre-configured bezels to hide the vertical black bars on 8 bit and 16 bit games."
     },
+    "AutoMapPage": {
+      "title": "Configure AutoMap",
+      "description": "Enable AutoMap to allow EmuDeck to set up your controls in emulators that doesn't detect controllers automatically. This will also enable auto setup of controllers for up to 4 players and support for other controllers like the Steam Controller, 8BitDo, Xbox, DualSense, other SteamOS handhelds, etc. This option can be disabled later on the Quick Settings menu"
+    },
     "RomStoragePage": {
       "title": "Select your ROM Directory",
       "description": "Your ROM directory will be squared away within an Emulation folder in your selected directory.",

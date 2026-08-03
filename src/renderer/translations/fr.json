@@ -362,6 +362,10 @@
       "title": "Configurer les lunettes de jeu",
       "description": ""
     },
+    "AutoMapPage": {
+      "title": "Configurar biseles de juego",
+      "description": ""
+    },
     "RomStoragePage": {
       "title": "Sélectionnez votre répertoire de ROM",
       "description": "Votre répertoire de ROM sera rangé dans un dossier d'Émulation dans le répertoire sélectionné.",

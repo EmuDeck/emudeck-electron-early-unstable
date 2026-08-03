@@ -362,6 +362,10 @@
       "title": "Configura cornici di gioco",
       "description": ""
     },
+    "AutoMapPage": {
+      "title": "Configurar biseles de juego",
+      "description": ""
+    },
     "RomStoragePage": {
       "title": "Seleziona la directory delle ROM",
       "description": "La tua directory delle ROM sarà sistemata all'interno di una cartella di Emulazione nella directory selezionata.",

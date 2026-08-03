@@ -363,6 +363,10 @@
       "title": "Configurar biseles de juego",
       "description": ""
     },
+    "AutoMapPage": {
+      "title": "",
+      "description": ""
+    },
     "RomStoragePage": {
       "title": "Selecciona tu Directorio de ROMs",
       "description": "Tu directorio de ROMs se organizará dentro de una carpeta de Emulación en el directorio seleccionado.",

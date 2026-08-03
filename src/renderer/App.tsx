@@ -28,6 +28,7 @@ import PowerToolsPage from 'pages/PowerToolsPage';
 import PowerControlsPage from 'pages/PowerControlsPage';
 import EmuDeckyPage from 'pages/EmuDeckyPage';
 import CheckBiosPage from 'pages/CheckBiosPage';
+import AutoMapPage from 'pages/AutoMapPage';
 
 import CHDToolPage from 'pages/CHDToolPage';
 import GyroDSUPage from 'pages/GyroDSUPage';
@@ -436,9 +437,7 @@ export default function App() {
       dolphin: '720P',
       duckstation: '720P',
       pcsx2: '720P',
-      yuzu: '720P',
-      eden: '720P',
-      citron: '720P',
+      yuzu: '720P', // Used for all Switch emulators
       ppsspp: '720P',
       rpcs3: '720P',
       ryujinx: '720P',
@@ -480,6 +479,7 @@ export default function App() {
             path="/emulator-selector"
             element={<EmulatorSelectorPage />}
           />
+          <Route exact path="/automap" element={<AutoMapPage />} />
           <Route
             exact
             path="/frontend-selector"

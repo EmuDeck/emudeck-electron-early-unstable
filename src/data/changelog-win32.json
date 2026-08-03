@@ -1,5 +1,20 @@
 [
   {
+    "title": "RetroAchievements",
+    "description": "EmuDeck now uses the RetroAchievements new API and we've added support for Dolphin RetroAchievements setup",
+    "image": "true"
+  },
+  {
+    "title": "Resolution selector",
+    "description": "Change the resolution of more emulators from within EmuDeck, added PPSSPP, Xemu, Vita3K, Azahar and PrimeHack. Fixed a bug where resolutions weren't being applied on installation.",
+    "image": "true"
+  },
+  {
+    "title": "Embedded videos",
+    "description": "Fixed the youtube video error on embedded videos in the app",
+    "image": "true"
+  },
+  {
     "title": "EmuDeck Compressor",
     "description": "Fixed an issue where EmuDeck Compresor couldn't be launched from the EmuDeck app",
     "image": "false"
@@ -7,11 +22,6 @@
   {
     "title": "EmuDeck Start Menu links",
     "description": "The EmuDeck app will restart explorer.exe to reset the Start Menu cache that prevented the EmuDeck icons to be shown",
-    "image": "false"
-  },
-  {
-    "title": "RetroAchievements",
-    "description": "Use of RetroAchievements new API and added support for Dolphin",
     "image": "false"
   }
 ]

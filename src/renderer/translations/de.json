@@ -362,6 +362,10 @@
       "title": "Configure game bezels",
       "description": ""
     },
+    "AutoMapPage": {
+      "title": "Configurar biseles de juego",
+      "description": ""
+    },
     "RomStoragePage": {
       "title": "Select your ROM Directory",
       "description": "Your ROM directory will be squared away within an Emulation folder in your selected directory.",

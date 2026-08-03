@@ -75,12 +75,30 @@ function DeviceSelectorPage() {
       melonds: '720P',
     };
 
+    const steamMachine = {
+      dolphin: '4K',
+      duckstation: '4K',
+      pcsx2: '4K',
+      yuzu: '1080P',
+      citron: '1080P',
+      ppsspp: '4K',
+      rpcs3: '1080P',
+      ryujinx: '1080P',
+      xemu: '1080P',
+      cemu: '1080P',
+      xenia: '1080P',
+      azahar: '4K',
+      vita3k: '4K',
+      flycast: '4K',
+      melonds: '4K',
+    };
+
     const r1080p = {
       dolphin: '1080P',
       duckstation: '1080P',
       pcsx2: '1080P',
       yuzu: '1080P',
-      citron: '720P',
+      citron: '1080P',
       ppsspp: '1080P',
       rpcs3: '1080P',
       ryujinx: '1080P',
@@ -99,7 +117,7 @@ function DeviceSelectorPage() {
         resolutionsObj = deck;
         break;
       case 'Steam Machine':
-        resolutionsObj = r1080p;
+        resolutionsObj = steamMachine;
         break;
       case 'Playnix Console':
         resolutionsObj = r1080p;
@@ -142,6 +160,7 @@ function DeviceSelectorPage() {
       ...state,
       device: deviceName,
       resolutions: resolutionsObj,
+      automap: true,
     });
   };
 
@@ -227,7 +246,13 @@ function DeviceSelectorPage() {
         )}
       </DeviceSelector>
       <Footer
-        next="frontend-selector"
+        next={
+          system === 'win32'
+            ? 'frontend-selector'
+            : mode === 'easy'
+            ? 'frontend-selector'
+            : 'automap'
+        }
         nextText={t('general.next')}
         disabledNext={disabledNext}
         disabledBack={disabledBack}
