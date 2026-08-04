@@ -290,6 +290,7 @@ function EmulatorsDetailPage() {
   };
 
   const showControls = (emulator, code) => {
+    let img;
     switch (emulator) {
       case 'ra':
         img = raControls;
@@ -373,6 +374,7 @@ function EmulatorsDetailPage() {
         img = defaultControls;
         break;
     }
+
     const modalData = {
       active: true,
       body: <img onClick={() => closeModal()} src={img} alt="Controls" />,
@@ -385,7 +387,6 @@ function EmulatorsDetailPage() {
   };
 
   const showHotkeys = (emulator, code) => {
-    console.log({ emulator });
     let img;
     switch (emulator) {
       case 'ra':
@@ -465,6 +466,9 @@ function EmulatorsDetailPage() {
         break;
       case 'wii_expert':
         img = wiiHotkeysExpert;
+        break;
+      case 'pcsx2_expert':
+        img = pcsx2HotkeysExpert;
         break;
 
       default:
