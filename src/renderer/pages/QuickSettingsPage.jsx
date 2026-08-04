@@ -285,8 +285,13 @@ function QuickSettingsPage() {
       ...state,
       automap: status,
     });
+    let functionAutoMap;
+    status ? (functionAutoMap = 'autoMapOn') : (functionAutoMap = 'autoMapOff');
 
-    notificationShow(`🎉 ${t('QuickSettingsPage.nofifAutoMap')}`);
+    ipcChannel.sendMessage('emudeck', [`autoMap|||${functionAutoMap}`]);
+    ipcChannel.once('autoMap', () => {
+      notificationShow(`🎉 ${t('QuickSettingsPage.nofifAutoMap')}`);
+    });
   };
 
   const controllerLayoutSet = (value) => {
