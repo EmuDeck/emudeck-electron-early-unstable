@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import React, { useEffect, useState, useContext, useRef } from 'react';
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import { GlobalContext } from 'context/globalContext';
 import Wrapper from 'components/molecules/Wrapper/Wrapper';
 
@@ -8,41 +8,34 @@ import Footer from 'components/organisms/Footer/Footer';
 
 import AutoMap from 'components/organisms/Wrappers/AutoMap';
 
-const AutoMapPage = () => {
+function AutoMapPage() {
   const { t, i18n } = useTranslation();
   const { state, setState } = useContext(GlobalContext);
-  const { automap } = state;
-  const [statePage, setStatePage] = useState({
-    disabledNext: false,
-    disabledBack: false,
-    dom: undefined,
-  });
-  const { disabledNext, disabledBack, data, dom } = statePage;
-  const autoMapSet = (autoMapStatus) => {
+  const { automap, system } = state;
+
+  const setAutoMap = (emulator, status) => {
     setState({
       ...state,
-      automap: autoMapStatus,
+      automap: {
+        ...automap,
+        [emulator]: status,
+      },
     });
   };
-  //Enabling button when changing the global state only if we have a device selected
-  useEffect(() => {
-    if (automap != '') {
-      setStatePage({ ...statePage, disabledNext: false });
-    }
-  }, [state]);
+
+  const [statePage, setStatePage] = useState({
+    dom: undefined,
+  });
+  const { dom } = statePage;
 
   return (
     <Wrapper>
       <Header title={t('AutoMapPage.title')} />
       <p className="lead">{t('AutoMapPage.description')}</p>
-      <AutoMap automap={automap} onClick={autoMapSet} />
-      <Footer
-        next="frontend-selector"
-        disabledNext={disabledNext}
-        disabledBack={disabledBack}
-      />
+      <AutoMap onClick={setAutoMap} />
+      <Footer next="frontend-selector" nextText={t('general.next')} />
     </Wrapper>
   );
-};
+}
 
 export default AutoMapPage;

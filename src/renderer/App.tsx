@@ -29,6 +29,7 @@ import PowerControlsPage from 'pages/PowerControlsPage';
 import EmuDeckyPage from 'pages/EmuDeckyPage';
 import CheckBiosPage from 'pages/CheckBiosPage';
 import AutoMapPage from 'pages/AutoMapPage';
+import AutoMapConfigPage from 'pages/AutoMapConfigPage';
 
 import CHDToolPage from 'pages/CHDToolPage';
 import GyroDSUPage from 'pages/GyroDSUPage';
@@ -143,7 +144,11 @@ export default function App() {
       hardcore: false,
     },
     autosave: false,
-    automap: false,
+    automap: {
+      dolphin: true,
+      yuzu: true, // All Switch emus
+      cemu: true,
+    },
     ar: {
       sega: 43,
       snes: 43,
@@ -480,6 +485,12 @@ export default function App() {
             element={<EmulatorSelectorPage />}
           />
           <Route exact path="/automap" element={<AutoMapPage />} />
+          <Route
+            exact
+            path="/automap-configuration"
+            element={<AutoMapConfigPage />}
+          />
+
           <Route
             exact
             path="/frontend-selector"

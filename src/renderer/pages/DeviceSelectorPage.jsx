@@ -160,7 +160,6 @@ function DeviceSelectorPage() {
       ...state,
       device: deviceName,
       resolutions: resolutionsObj,
-      automap: true,
     });
   };
 
