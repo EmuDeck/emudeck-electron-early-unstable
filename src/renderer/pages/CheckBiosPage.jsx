@@ -114,6 +114,7 @@ function CheckBiosPage() {
         switchBios={switchBios}
         ryujinxBios={ryujinxBios}
         citronBios={citronBios}
+        edenBios={edenBios}
         segaCDBios={segaCDBios}
         saturnBios={saturnBios}
         dreamcastBios={dreamcastBios}
