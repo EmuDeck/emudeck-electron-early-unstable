@@ -30,6 +30,7 @@ import EmuDeckyPage from 'pages/EmuDeckyPage';
 import CheckBiosPage from 'pages/CheckBiosPage';
 import AutoMapPage from 'pages/AutoMapPage';
 import AutoMapConfigPage from 'pages/AutoMapConfigPage';
+import ImportExportPage from 'pages/ImportExportPage';
 
 import CHDToolPage from 'pages/CHDToolPage';
 import GyroDSUPage from 'pages/GyroDSUPage';
@@ -490,6 +491,7 @@ export default function App() {
             path="/automap-configuration"
             element={<AutoMapConfigPage />}
           />
+          <Route exact path="/import-export" element={<ImportExportPage />} />
 
           <Route
             exact

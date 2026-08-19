@@ -10,7 +10,7 @@
  */
 import https from 'https';
 import path from 'path';
-import { exec, spawn } from 'child_process';
+import { exec, spawn, execSync } from 'child_process';
 import { app, BrowserWindow, ipcMain, nativeTheme } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
@@ -48,7 +48,6 @@ if (os.platform().includes('win32')) {
   finishCommand = '}"';
 }
 
-let shellType: any;
 export default class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
@@ -157,13 +156,32 @@ const installExtensions = async () => {
     .catch(console.log);
 };
 
-const createWindow = async () => {
-  if (os.platform().includes('win32')) {
-    shellType = {};
-  } else {
-    shellType = { shell: '/bin/bash' };
-  }
+const resolveBash = (): string | undefined => {
+  if (os.platform() === 'win32') return undefined;
 
+  const candidates = ['/opt/homebrew/bin/bash', '/usr/bin/bash', '/bin/bash'];
+
+  for (const bin of candidates) {
+    if (!fs.existsSync(bin)) continue;
+    try {
+      const v = execSync(`${bin} -c 'echo $BASH_VERSINFO'`).toString().trim();
+      if (parseInt(v, 10) >= 4) return bin;
+    } catch {
+      /* siguiente */
+    }
+  }
+  return undefined;
+};
+
+const bashPath = resolveBash();
+const shellType =
+  os.platform() === 'win32'
+    ? { shell: 'powershell.exe' }
+    : { shell: bashPath, maxBuffer: 10 * 1024 * 1024 };
+
+console.log({ shellType });
+
+const createWindow = async () => {
   if (isDebug) {
     await installExtensions();
   }
@@ -182,6 +200,33 @@ const createWindow = async () => {
   const screenHeight = height < 701 ? 600 : 740;
   const isFullscreen = false;
   // const os = require('os');
+
+  //Web socket
+  const net = require('net');
+  const logServer = net.createServer((sock) => {
+    let buf = '';
+    sock.setEncoding('utf8');
+    sock.on('data', (chunk) => {
+      buf += chunk;
+      let i;
+      while ((i = buf.indexOf('\n')) !== -1) {
+        const line = buf.slice(0, i);
+        buf = buf.slice(i + 1);
+        BrowserWindow.getAllWindows().forEach((w) =>
+          w.webContents.send('backend-log', line)
+        );
+      }
+    });
+  });
+
+  //Dynamic random port as a system var
+  logServer.listen(0, '127.0.0.1', () => {
+    process.env.EMUDECK_BACKEND_PORT = String(logServer.address().port);
+  });
+
+  logServer.on('error', (err) => {
+    console.error('backend log server error:', err.message);
+  });
 
   // let dpi;
   // if (os.platform() === 'darwin') {
@@ -713,7 +758,15 @@ ipcMain.on('clone', async (event, branch) => {
 ipcMain.on('pull', async (event, branch) => {
   const branchGIT = branch;
   const backChannel = 'pull';
-  let bashCommand = `cd ~/.config/EmuDeck/backend && git reset --hard && git clean -fd && git checkout ${branchGIT} && git pull && . ~/.config/EmuDeck/backend/functions/all.sh && appImageInit`;
+
+  let bashCommand;
+
+  bashCommand = `cd ~/.config/EmuDeck/backend && git reset --hard && git clean -fd && git checkout ${branchGIT} && git pull && . ~/.config/EmuDeck/backend/functions/all.sh && appImageInit`;
+
+  //Dev on macOS
+  if (os.platform().includes('darwin')) {
+    bashCommand = `. ~/.config/EmuDeck/backend/functions/all.sh && appImageInit`;
+  }
 
   if (os.platform().includes('win32')) {
     bashCommand = `cd %userprofile% && cd AppData && cd Roaming && cd EmuDeck && cd backend && powershell -ExecutionPolicy Bypass -command "& { Start-Transcript "$env:APPDATA/EmuDeck/logs/git.log"; git reset --hard ; git clean -fd ; git checkout ${branchGIT} ; git pull --allow-unrelated-histories -X theirs;cd $env:USERPROFILE ; cd AppData ; cd Roaming  ; cd EmuDeck ; cd backend ; cd functions ; . ./all.ps1 ; appImageInit; Stop-Transcript; "}`;

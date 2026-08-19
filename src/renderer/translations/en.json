@@ -23,7 +23,9 @@
       "sudo": "EmuDeck has detected you already have set a sudo password, type it below.",
       "loading": "Loading",
       "save": "Save",
-      "both": "Both"
+      "both": "Both",
+      "start": "Start",
+      "cancel": "Cancel"
     },
     "footer": {
       "exit": "Exit To Gaming Mode"
@@ -57,7 +59,23 @@
       "thirdParty": "Third Party Tools",
       "other": "Other Stuff",
       "autoMap": "AutoMap",
-      "import_export": "Import / Export"
+      "importExport": "Import / Export"
+    },
+    "ImportExportPage": {
+      "title": "Import / Export EmuDeck to another device",
+      "description": "On this page, you can migrate your EmuDeck installation to another system wether it's Linux or Windows.",
+      "export": "Export",
+      "exportDescription": "This option will export all your roms, bios and saves to another drive. Emulator settings and Steam Rom Manager entries won't be exported.",
+      "import": "Import",
+      "importDescription": "This option will import all your roms, bios and saves from another drive. Emulator settings and Steam Rom Manager entries won't be imported.",
+      "importButton": "Start Import",
+      "exportButton": "Start Export",
+      "exportBackup": "Export backup",
+      "importBackup": "Import backup",
+      "selectExport": "Please select what you want to export:",
+      "selectImport": "Please select what you want to import:",
+      "pickDriveExport": "Where do you want to store your backup?",
+      "pickDriveImport": "Where do you have your backup stored?"
     },
     "ManageEmulatorsPage": {
       "title": "Manage your Emulators",
@@ -117,7 +135,6 @@
       "title": "Bring your own APK",
       "description": "Do you have another emulator or do you want to install ESDE?<br/>Put all your APK in your downloads folder and EmuDeck will install them<br/><strong>Please don't use pirated APKs</strong>"
     },
-
     "AndroidRABezelsPage": {
       "title": "Configure game bezels",
       "description": "Use EmuDeck's pre-configured bezels to hide the vertical black bars on 8 bit and 16 bit games."
@@ -179,8 +196,14 @@
       "title": "Configure Aspect Ratio for Classic Nintendo",
       "description": "Select the aspect ratio for the Super Nintendo and NES."
     },
-    "AutoSavePage": { "title": "Configure Auto Save", "description": "" },
-    "ChangeLogPage": { "title": "Latest changes", "description": "" },
+    "AutoSavePage": {
+      "title": "Configure Auto Save",
+      "description": ""
+    },
+    "ChangeLogPage": {
+      "title": "Latest changes",
+      "description": ""
+    },
     "CHDToolPage": {
       "title": "EmuDeck Compression Tool",
       "description": "The Compression Tool is a script that looks through certain ROM folders and compresses games by up to 70% of their original file size using CHD, RVZ, Trimmed 3DS, XISO, and 7Zip formats."
@@ -227,7 +250,10 @@
       "title": "Configure Controller Layout",
       "description": "Do you want your controller set so the buttons match the position of the original controllers ( A is mapped to B ) or do you want to use your controller's layout ( A is mapped to A )"
     },
-    "CopyGamesPage": { "title": "", "description": "" },
+    "CopyGamesPage": {
+      "title": "",
+      "description": ""
+    },
     "DeviceSelectorPage": {
       "title": "Select your device",
       "description": "EmuDeck tailors the install for different hardware. Each device will have its own configuration, emulators and pre-configured bezels."
@@ -244,7 +270,10 @@
         "list": "<li>- Same features as Early Access and</li><li>- Voting rights, let's shape the future of EmuDeck together</li>"
       }
     },
-    "EmuDeckyPage": { "title": "Configure EmuDecky", "description": "" },
+    "EmuDeckyPage": {
+      "title": "Configure EmuDecky",
+      "description": ""
+    },
     "EmulatorConfigResolutionPage": {
       "title": "Emulator Resolution",
       "description": ""
@@ -257,7 +286,10 @@
       "title": "Emulator Resolution",
       "description": "Select the resolution you would like to use for your emulators. Keep in mind that a higher resolution will require a faster computer."
     },
-    "EmulatorsDetailPage": { "title": "", "description": "" },
+    "EmulatorsDetailPage": {
+      "title": "",
+      "description": ""
+    },
     "EmulatorSelectorPage": {
       "title": "Emulators and tools for {{device}}",
       "standaloneRA": "RetroArch or Standalone Emulator?"
@@ -268,7 +300,9 @@
       "titleAlly": "Asus Rog Ally Controller configuration",
       "titleWin32": "Controller configuration"
     },
-    "ErrorPage": { "title": "" },
+    "ErrorPage": {
+      "title": ""
+    },
     "ESDEThemePage": {
       "title": "EmulationStation-DE Default Theme",
       "description": "Select your default theme."
@@ -372,7 +406,9 @@
       "title": "Configure LCD Shader for Handheld Systems",
       "description": "The LCD Shader simulates the old LCD Matrix screens of handheld systems."
     },
-    "StoreFrontPage": { "title": "EmuDeck Store" },
+    "StoreFrontPage": {
+      "title": "EmuDeck Store"
+    },
     "UninstallPage": {
       "title": "Uninstall EmuDeck",
       "description": "The EmuDeck Uninstallation utility should only be used if you are intending on removing EmuDeck from your system. If you are having issues, run a Custom Reset, troubleshoot the specific tool or emulator, or visit EmuDeck Discord or Reddit for additional support."
@@ -424,7 +460,9 @@
         "description": "Boot to the Windows Desktop like any Windows PC"
       }
     },
-    "ManageEmulators": { "description": "" },
+    "ManageEmulators": {
+      "description": ""
+    },
     "Migration": {
       "current": "Current Installation:",
       "errorDetected": "Not detected",
@@ -456,6 +494,30 @@
       "title": "Select which batch you want to update:",
       "btn1": "Update Flatpaks",
       "btn2": "Update AppImages, Binaries, and Windows Executables"
+    },
+    "importExport": {
+      "items": {
+        "roms": "Roms",
+        "bios": "BIOS",
+        "saves": "Saves",
+        "storage": "Storage",
+        "esdeArtwork": "ES-DE Media"
+      },
+      "importing": "Importing {{item}}",
+      "exporting": "Exporting {{item}}",
+      "calculatingSize": "Calculating size of {{item}}",
+      "noSpace": "Not enough space in {{destination}} for {{item}}",
+      "failed": "Failed to copy {{item}} (code {{code}})",
+      "invalidOrigin": "Invalid origin: {{path}}",
+      "invalidDestination": "Invalid destination: {{path}}",
+      "nothingSelectedImport": "Nothing selected to import",
+      "nothingSelectedExport": "Nothing selected to export",
+      "importFinished": "Import finished",
+      "exportFinished": "Export finished",
+      "importFinishedWithErrors": "Import finished with errors in: {{items}}",
+      "exportFinishedWithErrors": "Export finished with errors in: {{items}}",
+      "preparingImport": "Preparing import…",
+      "preparingExport": "Preparing export…"
     }
   }
 }

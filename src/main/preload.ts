@@ -2,6 +2,14 @@ import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron';
 
 export type Channels = 'ipc-example';
 
+contextBridge.exposeInMainWorld('backend', {
+  message: (callback) => {
+    const handler = (_event, line) => callback(line);
+    ipcRenderer.on('backend-log', handler);
+    return () => ipcRenderer.removeListener('backend-log', handler);
+  },
+});
+
 contextBridge.exposeInMainWorld('electron', {
   ipcRenderer: {
     sendMessage(channel: Channels, args: unknown[]) {

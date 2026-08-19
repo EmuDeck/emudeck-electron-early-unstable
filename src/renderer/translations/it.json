@@ -23,7 +23,9 @@
       "loading": "Caricamento",
       "save": "Salva",
       "both": "Entrambi",
-      "no": "No"
+      "no": "No",
+      "start": "Avvia",
+      "cancel": "Annulla"
     },
     "footer": {
       "exit": "Esci dalla modalità di gioco"
@@ -473,6 +475,46 @@
       "title": "Seleziona quale gruppo vuoi aggiornare:",
       "btn1": "Aggiorna Flatpaks",
       "btn2": "Aggiorna AppImages, Binaries e Eseguibili Windows"
+    },
+    "importExport": {
+      "items": {
+        "roms": "Roms",
+        "bios": "BIOS",
+        "saves": "Salvataggi",
+        "storage": "Archiviazione",
+        "esdeArtwork": "Media ES-DE"
+      },
+      "importing": "Importazione di {{item}}",
+      "exporting": "Esportazione di {{item}}",
+      "calculatingSize": "Calcolo della dimensione di {{item}}",
+      "noSpace": "Spazio insufficiente su {{destination}} per {{item}}",
+      "failed": "Copia di {{item}} non riuscita (codice {{code}})",
+      "invalidOrigin": "Origine non valida: {{path}}",
+      "invalidDestination": "Destinazione non valida: {{path}}",
+      "nothingSelectedImport": "Non hai selezionato nulla da importare",
+      "nothingSelectedExport": "Non hai selezionato nulla da esportare",
+      "importFinished": "Importazione completata",
+      "exportFinished": "Esportazione completata",
+      "importFinishedWithErrors": "Importazione completata con errori in: {{items}}",
+      "exportFinishedWithErrors": "Esportazione completata con errori in: {{items}}",
+      "preparingImport": "Preparazione dell'importazione…",
+      "preparingExport": "Preparazione dell'esportazione…"
+    },
+    "ImportExportPage": {
+      "title": "Importa / Esporta EmuDeck su un altro dispositivo",
+      "description": "In questa pagina puoi migrare la tua installazione di EmuDeck su un altro sistema, sia Linux che Windows.",
+      "export": "Esporta",
+      "exportDescription": "Questa opzione esporterà tutte le tue rom, i bios e i salvataggi su un'altra unità. Le impostazioni degli emulatori e le voci di Steam Rom Manager non verranno esportate.",
+      "import": "Importa",
+      "importDescription": "Questa opzione importerà tutte le tue rom, i bios e i salvataggi da un'altra unità. Le impostazioni degli emulatori e le voci di Steam Rom Manager non verranno importate.",
+      "importButton": "Avvia importazione",
+      "exportButton": "Avvia esportazione",
+      "exportBackup": "Esporta backup",
+      "importBackup": "Importa backup",
+      "selectExport": "Seleziona cosa vuoi esportare:",
+      "selectImport": "Seleziona cosa vuoi importare:",
+      "pickDriveExport": "Dove vuoi salvare il tuo backup?",
+      "pickDriveImport": "Dove hai salvato il tuo backup?"
     }
   }
 }

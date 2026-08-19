@@ -23,7 +23,9 @@
       "loading": "Wird geladen",
       "save": "Speichern",
       "both": "Beide",
-      "no": "Nein"
+      "no": "Nein",
+      "start": "Starten",
+      "cancel": "Abbrechen"
     },
     "footer": {
       "exit": "Spielmodus beenden"
@@ -528,6 +530,46 @@
     "NoInternetPage": {
       "title": "Keine Internetverbindung",
       "description": "Es konnte keine Verbindung zum Server hergestellt werden. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
+    },
+    "importExport": {
+      "items": {
+        "roms": "Roms",
+        "bios": "BIOS",
+        "saves": "Spielstände",
+        "storage": "Speicher",
+        "esdeArtwork": "ES-DE-Medien"
+      },
+      "importing": "{{item}} wird importiert",
+      "exporting": "{{item}} wird exportiert",
+      "calculatingSize": "Größe von {{item}} wird berechnet",
+      "noSpace": "Nicht genug Speicherplatz auf {{destination}} für {{item}}",
+      "failed": "Kopieren von {{item}} fehlgeschlagen (Code {{code}})",
+      "invalidOrigin": "Ungültige Quelle: {{path}}",
+      "invalidDestination": "Ungültiges Ziel: {{path}}",
+      "nothingSelectedImport": "Nichts zum Importieren ausgewählt",
+      "nothingSelectedExport": "Nichts zum Exportieren ausgewählt",
+      "importFinished": "Import abgeschlossen",
+      "exportFinished": "Export abgeschlossen",
+      "importFinishedWithErrors": "Import mit Fehlern abgeschlossen bei: {{items}}",
+      "exportFinishedWithErrors": "Export mit Fehlern abgeschlossen bei: {{items}}",
+      "preparingImport": "Import wird vorbereitet…",
+      "preparingExport": "Export wird vorbereitet…"
+    },
+    "ImportExportPage": {
+      "title": "EmuDeck auf ein anderes Gerät importieren / exportieren",
+      "description": "Auf dieser Seite kannst du deine EmuDeck-Installation auf ein anderes System übertragen, egal ob Linux oder Windows.",
+      "export": "Exportieren",
+      "exportDescription": "Diese Option exportiert alle deine Roms, BIOS-Dateien und Spielstände auf ein anderes Laufwerk. Emulator-Einstellungen und Steam-Rom-Manager-Einträge werden nicht exportiert.",
+      "import": "Importieren",
+      "importDescription": "Diese Option importiert alle deine Roms, BIOS-Dateien und Spielstände von einem anderen Laufwerk. Emulator-Einstellungen und Steam-Rom-Manager-Einträge werden nicht importiert.",
+      "importButton": "Import starten",
+      "exportButton": "Export starten",
+      "exportBackup": "Backup exportieren",
+      "importBackup": "Backup importieren",
+      "selectExport": "Wähle aus, was du exportieren möchtest:",
+      "selectImport": "Wähle aus, was du importieren möchtest:",
+      "pickDriveExport": "Wo möchtest du dein Backup speichern?",
+      "pickDriveImport": "Wo ist dein Backup gespeichert?"
     }
   }
 }
