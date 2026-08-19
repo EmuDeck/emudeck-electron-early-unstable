@@ -280,20 +280,6 @@ function QuickSettingsPage() {
     });
   };
 
-  const autoMapSet = (status) => {
-    setState({
-      ...state,
-      automap: status,
-    });
-    let functionAutoMap;
-    status ? (functionAutoMap = 'autoMapOn') : (functionAutoMap = 'autoMapOff');
-
-    ipcChannel.sendMessage('emudeck', [`autoMap|||${functionAutoMap}`]);
-    ipcChannel.once('autoMap', () => {
-      notificationShow(`🎉 ${t('QuickSettingsPage.nofifAutoMap')}`);
-    });
-  };
-
   const controllerLayoutSet = (value) => {
     setState({
       ...state,
@@ -351,7 +337,6 @@ function QuickSettingsPage() {
         onClickCRT3D={onClickCRT3D}
         onClickLCD={onClickLCD}
         onClickAutoSave={autoSaveSet}
-        onClickAutoMap={autoMapSet}
         onClickControllerLayoutSet={controllerLayoutSet}
         onClickBoot={onClickBoot}
       />
