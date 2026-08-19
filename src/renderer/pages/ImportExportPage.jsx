@@ -358,11 +358,10 @@ function ImportExportPage() {
       css: 'emumodal--sm',
     };
     setStateModal(() => ({ modal: modalData }));
-
     console.log(
-      `export_emudeck|||export_emudeck "${JSON.stringify(
+      `export_emudeck|||export_emudeck '${JSON.stringify(
         selectionRef.current
-      )}" ${storage}`
+      )}' '${storage}'`
     );
 
     ipcChannel.sendMessage('emudeck', [
@@ -373,6 +372,9 @@ function ImportExportPage() {
   };
 
   const setDrive = (drive) => {
+    if (system === 'win32') {
+      drive = `${drive}\\`;
+    }
     setStatePage((prev) => ({ ...prev, storage: drive }));
   };
 

@@ -63,7 +63,7 @@
     },
     "ImportExportPage": {
       "title": "Import / Export EmuDeck to another device",
-      "description": "On this page, you can migrate your EmuDeck installation to another system wether it's Linux or Windows.",
+      "description": "On this page, you can migrate your EmuDeck installation to another system whether it's Linux or Windows.",
       "export": "Export",
       "exportDescription": "This option will export all your roms, bios and saves to another drive. Emulator settings and Steam Rom Manager entries won't be exported.",
       "import": "Import",
@@ -506,7 +506,7 @@
       "importing": "Importing {{item}}",
       "exporting": "Exporting {{item}}",
       "calculatingSize": "Calculating size of {{item}}",
-      "noSpace": "Not enough space in {{destination}} for {{item}}",
+      "noSpace": "Not enough space in {{destination}} for {{item}}. Operation cancelled.",
       "failed": "Failed to copy {{item}} (code {{code}})",
       "invalidOrigin": "Invalid origin: {{path}}",
       "invalidDestination": "Invalid destination: {{path}}",
@@ -514,10 +514,11 @@
       "nothingSelectedExport": "Nothing selected to export",
       "importFinished": "Import finished",
       "exportFinished": "Export finished",
-      "importFinishedWithErrors": "Import finished with errors in: {{items}}",
-      "exportFinishedWithErrors": "Export finished with errors in: {{items}}",
+      "importFinishedWithErrors": "Import finished. These items could not be copied: {{items}}",
+      "exportFinishedWithErrors": "Export finished. These items could not be copied: {{items}}",
       "preparingImport": "Preparing import…",
-      "preparingExport": "Preparing export…"
+      "preparingExport": "Preparing export…",
+      "unexpectedError": "Unexpected error: {{error}}"
     }
   }
 }

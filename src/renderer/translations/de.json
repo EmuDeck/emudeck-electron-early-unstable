@@ -542,7 +542,7 @@
       "importing": "{{item}} wird importiert",
       "exporting": "{{item}} wird exportiert",
       "calculatingSize": "Größe von {{item}} wird berechnet",
-      "noSpace": "Nicht genug Speicherplatz auf {{destination}} für {{item}}",
+      "noSpace": "Nicht genug Speicherplatz auf {{destination}} für {{item}}. Vorgang abgebrochen.",
       "failed": "Kopieren von {{item}} fehlgeschlagen (Code {{code}})",
       "invalidOrigin": "Ungültige Quelle: {{path}}",
       "invalidDestination": "Ungültiges Ziel: {{path}}",
@@ -550,10 +550,11 @@
       "nothingSelectedExport": "Nichts zum Exportieren ausgewählt",
       "importFinished": "Import abgeschlossen",
       "exportFinished": "Export abgeschlossen",
-      "importFinishedWithErrors": "Import mit Fehlern abgeschlossen bei: {{items}}",
-      "exportFinishedWithErrors": "Export mit Fehlern abgeschlossen bei: {{items}}",
+      "importFinishedWithErrors": "Import abgeschlossen. Diese Elemente konnten nicht kopiert werden: {{items}}",
+      "exportFinishedWithErrors": "Export abgeschlossen. Diese Elemente konnten nicht kopiert werden: {{items}}",
       "preparingImport": "Import wird vorbereitet…",
-      "preparingExport": "Export wird vorbereitet…"
+      "preparingExport": "Export wird vorbereitet…",
+      "unexpectedError": "Unerwarteter Fehler: {{error}}"
     },
     "ImportExportPage": {
       "title": "EmuDeck auf ein anderes Gerät importieren / exportieren",

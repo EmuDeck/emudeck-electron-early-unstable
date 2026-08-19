@@ -176,7 +176,7 @@ const resolveBash = (): string | undefined => {
 const bashPath = resolveBash();
 const shellType =
   os.platform() === 'win32'
-    ? { shell: 'powershell.exe' }
+    ? {}
     : { shell: bashPath, maxBuffer: 10 * 1024 * 1024 };
 
 console.log({ shellType });
@@ -437,7 +437,10 @@ ipcMain.on('emudeck', async (event, command) => {
 
   if (os.platform().includes('win32')) {
     bashCommand = bashCommand.replaceAll('&&', ';');
-    preCommand = `powershell -ExecutionPolicy Bypass -command "& { cd $env:USERPROFILE ; cd AppData ; cd Roaming  ; cd EmuDeck ; cd backend ; cd functions ; . ./all.ps1 ; ${bashCommand} "}`;
+
+    const psScript = `cd $env:USERPROFILE ; cd AppData ; cd Roaming ; cd EmuDeck ; cd backend ; cd functions ; . ./all.ps1 ; ${bashCommand}`;
+    const encoded = Buffer.from(psScript, 'utf16le').toString('base64');
+    preCommand = `powershell -ExecutionPolicy Bypass -EncodedCommand ${encoded}`;
   } else {
     preCommand = `. ~/.config/EmuDeck/backend/functions/all.sh && ${bashCommand}`;
   }

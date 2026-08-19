@@ -487,7 +487,7 @@
       "importing": "Importando {{item}}",
       "exporting": "Exportando {{item}}",
       "calculatingSize": "Calculando el tamaño de {{item}}",
-      "noSpace": "No hay espacio suficiente en {{destination}} para {{item}}",
+      "noSpace": "No hay espacio suficiente en {{destination}} para {{item}}. Operación cancelada.",
       "failed": "Error al copiar {{item}} (código {{code}})",
       "invalidOrigin": "Origen no válido: {{path}}",
       "invalidDestination": "Destino no válido: {{path}}",
@@ -495,10 +495,11 @@
       "nothingSelectedExport": "No has seleccionado nada para exportar",
       "importFinished": "Importación finalizada",
       "exportFinished": "Exportación finalizada",
-      "importFinishedWithErrors": "Importación finalizada con errores en: {{items}}",
-      "exportFinishedWithErrors": "Exportación finalizada con errores en: {{items}}",
+      "importFinishedWithErrors": "Importación finalizada. No se han podido copiar: {{items}}",
+      "exportFinishedWithErrors": "Exportación finalizada. No se han podido copiar: {{items}}",
       "preparingImport": "Preparando la importación…",
-      "preparingExport": "Preparando la exportación…"
+      "preparingExport": "Preparando la exportación…",
+      "unexpectedError": "Error inesperado: {{error}}"
     },
     "ImportExportPage": {
       "title": "Importar / Exportar EmuDeck a otro dispositivo",
