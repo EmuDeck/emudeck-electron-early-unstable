@@ -415,7 +415,7 @@ function ManageEmulatorsPage() {
               })}
             </div>
             <hr />
-            <span class="h2">Manage your Tools & Frontends</span>
+            <span className="h2">Manage your Tools & Frontends</span>
             <div className="cards cards--medium">
               {installFrontendsArray.map((item) => {
                 const img = images[item.id];

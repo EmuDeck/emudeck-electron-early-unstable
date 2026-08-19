@@ -211,7 +211,7 @@ function WelcomePage() {
                   return (
                     <Card key={item.link} css="is-selected">
                       <a target={item.target} href={item.link}>
-                        <span class="h5">{item.title}</span>
+                        <span className="h5">{item.title}</span>
                         <p>{item.desc}</p>
                         <img src={item.img} />
                       </a>
@@ -219,7 +219,7 @@ function WelcomePage() {
                   );
                 })}
             </div>
-            <span class="h2">
+            <span className="h2">
               Games of the month by{' '}
               <a
                 href="https://retrohandhelds.gg"
@@ -237,9 +237,9 @@ function WelcomePage() {
               {game_of_the_month &&
                 game_of_the_month.map((item) => {
                   return (
-                    <Card css="is-selected">
+                    <Card key={item.title} css="is-selected">
                       <a target="blank" href={item.link}>
-                        <span class="h5">{item.title}</span>
+                        <span className="h5">{item.title}</span>
                         <img src={item.img} />
                       </a>
                     </Card>
