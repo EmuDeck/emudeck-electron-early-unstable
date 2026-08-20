@@ -384,7 +384,7 @@ function CloudSyncPageConfig() {
   };
 
   useEffect(() => {
-    if (cloudSync !== '' || cloudSync !== undefined) {
+    if (cloudSync !== null) {
       ipcChannel.sendMessage('emudeck', [
         `save-setting|||setSetting rclone_provider ${cloudSync} && setSetting cloud_sync_provider ${cloudSync} `,
       ]);
