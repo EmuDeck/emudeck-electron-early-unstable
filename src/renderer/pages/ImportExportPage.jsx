@@ -220,6 +220,28 @@ function CheckBoxes({ onChange }) {
           </div>
         </div>
       </li>
+      <li>
+        <div className="form__group">
+          <div className="checkbox-simple">
+            <input
+              id="esdeArtwork"
+              name="esdeArtwork"
+              type="checkbox"
+              value=""
+              checked={checkboxes.esdeArtwork}
+              onChange={() =>
+                setCheckboxes((prev) => ({
+                  ...prev,
+                  esdeArtwork: !prev.esdeArtwork,
+                }))
+              }
+            />
+            <label htmlFor="esdeArtwork">
+              {t('importExport.items.esdeArtwork')}
+            </label>
+          </div>
+        </div>
+      </li>
     </ul>
   );
 }
