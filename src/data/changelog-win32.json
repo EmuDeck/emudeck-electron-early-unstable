@@ -23,5 +23,10 @@
     "title": "EmuDeck Start Menu links",
     "description": "The EmuDeck app will restart explorer.exe to reset the Start Menu cache that prevented the EmuDeck icons to be shown",
     "image": "false"
+  },
+  {
+    "title": "Import / Export",
+    "description": "Export your EmuDeck installation to another device. Steam Deck to Steam Machine, Linux <-> Windows, etc.",
+    "image": "false"
   }
 ]

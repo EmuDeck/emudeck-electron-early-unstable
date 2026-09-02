@@ -11,6 +11,7 @@ import Header from 'components/organisms/Header/Header';
 import { BtnSimple, Img, Iframe } from 'getbasecore/Atoms';
 import CopyGamesAuto from 'components/organisms/Wrappers/CopyGamesAuto';
 import SelectorMenu from 'components/molecules/SelectorMenu/SelectorMenu';
+import ImportExport from 'components/organisms/Wrappers/ImportExport';
 import { Alert } from 'getbasecore/Molecules';
 import { imgSTEAM } from 'components/utils/images/images';
 import { iconSuccess, iconDanger } from 'components/utils/images/icons';
@@ -434,6 +435,13 @@ function CopyGamesPage() {
         </>
       )}
 
+      {mode === 'backup' && statusCopyGames === null && (
+        <>
+          <Header title="Import EmuDeck data from another device" />
+          <ImportExport exportEnable={false} />
+        </>
+      )}
+
       {mode === undefined && (
         <>
           <Header title="Let's copy your games" />
@@ -457,6 +465,13 @@ function CopyGamesPage() {
                   mode === 'auto' ? 'is-selected' : '',
                   'Automatic import',
                   "You'll need a different computer to create a USB Drive",
+                  true,
+                ],
+                [
+                  () => selectMode('backup'),
+                  mode === 'backup' ? 'is-selected' : '',
+                  'Import Backup',
+                  'Pick this if you already have EmuDeck installed in other device',
                   true,
                 ],
               ]}
@@ -665,7 +680,16 @@ function CopyGamesPage() {
             Next
           </BtnSimple>
         )}
-
+        {mode === 'backup' && statusCopyGames === null && (
+          <BtnSimple
+            css="btn-simple--2"
+            type="button"
+            aria="Go Back"
+            onClick={() => navigate('/hotkeys')}
+          >
+            Next
+          </BtnSimple>
+        )}
         {second && statusCopyGames === null && (
           <BtnSimple
             css="btn-simple--2"

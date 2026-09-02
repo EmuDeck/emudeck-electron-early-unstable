@@ -499,15 +499,16 @@
       "exportFinishedWithErrors": "Exportation terminée. Ces éléments n'ont pas pu être copiés : {{items}}",
       "preparingImport": "Préparation de l'importation…",
       "preparingExport": "Préparation de l'exportation…",
-      "unexpectedError": "Erreur inattendue : {{error}}"
+      "unexpectedError": "Erreur inattendue : {{error}}",
+      "eta": "{{eta}} restant"
     },
     "ImportExportPage": {
       "title": "Importer / Exporter EmuDeck vers un autre appareil",
       "description": "Sur cette page, vous pouvez migrer votre installation EmuDeck vers un autre système, que ce soit Linux ou Windows.",
       "export": "Exporter",
-      "exportDescription": "Cette option exportera toutes vos roms, bios et sauvegardes vers un autre disque. Les réglages des émulateurs et les entrées de Steam Rom Manager ne seront pas exportés.",
+      "exportDescription": "Cette option exportera toutes vos roms, bios et sauvegardes vers un autre Appareil. Les réglages des émulateurs et les entrées de Steam Rom Manager ne seront pas exportés.",
       "import": "Importer",
-      "importDescription": "Cette option importera toutes vos roms, bios et sauvegardes depuis un autre disque. Les réglages des émulateurs et les entrées de Steam Rom Manager ne seront pas importés.",
+      "importDescription": "Cette option importera toutes vos roms, bios et sauvegardes depuis un autre Appareil. Les réglages des émulateurs et les entrées de Steam Rom Manager ne seront pas importés.",
       "importButton": "Démarrer l'importation",
       "exportButton": "Démarrer l'exportation",
       "exportBackup": "Exporter la sauvegarde",

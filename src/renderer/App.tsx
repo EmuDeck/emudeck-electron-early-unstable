@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  MemoryRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 
 import CheckUpdatePage from 'pages/CheckUpdatePage';
@@ -75,6 +80,18 @@ import 'getbasecore/src/utils/grid-layout/core_grid-layout.scss';
 import 'getbasecore/src/components/atoms/Typography/core_typography.scss';
 
 const branch = require('data/branch.json');
+
+function RouteClass() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const name = location.pathname.replace(/^\//, '') || 'root';
+    document.body.dataset.route = name;
+    return () => delete document.body.dataset.route;
+  }, [location]);
+
+  return null;
+}
 
 export default function App() {
   const [stateAside, setStateAside] = useState({
@@ -469,6 +486,7 @@ export default function App() {
       }}
     >
       <Router>
+        <RouteClass />
         <Routes>
           <Route exact path="/" element={<PatroenLoginPage />} />
           <Route exact path="/error" element={<ErrorPage />} />

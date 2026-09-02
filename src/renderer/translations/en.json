@@ -65,9 +65,9 @@
       "title": "Import / Export EmuDeck to another device",
       "description": "On this page, you can migrate your EmuDeck installation to another system whether it's Linux or Windows.",
       "export": "Export",
-      "exportDescription": "This option will export all your roms, bios and saves to another drive. Emulator settings and Steam Rom Manager entries won't be exported.",
+      "exportDescription": "This option will export all your roms, bios and saves to another device. Emulator settings and Steam Rom Manager entries won't be exported.",
       "import": "Import",
-      "importDescription": "This option will import all your roms, bios and saves from another drive. Emulator settings and Steam Rom Manager entries won't be imported.",
+      "importDescription": "This option will import all your roms, bios and saves from another device. Emulator settings and Steam Rom Manager entries won't be imported.",
       "importButton": "Start Import",
       "exportButton": "Start Export",
       "exportBackup": "Export backup",
@@ -518,7 +518,8 @@
       "exportFinishedWithErrors": "Export finished. These items could not be copied: {{items}}",
       "preparingImport": "Preparing import…",
       "preparingExport": "Preparing export…",
-      "unexpectedError": "Unexpected error: {{error}}"
+      "unexpectedError": "Unexpected error: {{error}}",
+      "eta": "{{eta}} left"
     }
   }
 }

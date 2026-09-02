@@ -21,6 +21,7 @@ function AutoMapConfigPage() {
   const navigate = useNavigate();
 
   const setAutoMap = (emulator, status) => {
+    console.log({ emulator, status });
     setState({
       ...state,
       automap: {
@@ -35,7 +36,7 @@ function AutoMapConfigPage() {
     localStorage.setItem('settings_emudeck', json);
 
     ipcChannel.sendMessage('emudeck', [
-      `setAutoMapSettings|||setSetting autoMapDolPhin ${state.resolutions.dolphin}; setSetting autoMapSwitch ${state.resolutions.yuzu}; setSetting autoMapCemu ${state.resolutions.cemu}; `,
+      `setAutoMapSettings|||setSetting autoMapDolPhin ${state.automap.dolphin}; setSetting autoMapSwitch ${state.automap.yuzu}; setSetting autoMapCemu ${state.automap.cemu}; `,
     ]);
 
     ipcChannel.once('setAutoMapSettings', (message) => {

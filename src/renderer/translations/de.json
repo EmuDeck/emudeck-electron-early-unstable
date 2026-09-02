@@ -554,15 +554,16 @@
       "exportFinishedWithErrors": "Export abgeschlossen. Diese Elemente konnten nicht kopiert werden: {{items}}",
       "preparingImport": "Import wird vorbereitet…",
       "preparingExport": "Export wird vorbereitet…",
-      "unexpectedError": "Unerwarteter Fehler: {{error}}"
+      "unexpectedError": "Unerwarteter Fehler: {{error}}",
+      "eta": "noch {{eta}}"
     },
     "ImportExportPage": {
       "title": "EmuDeck auf ein anderes Gerät importieren / exportieren",
       "description": "Auf dieser Seite kannst du deine EmuDeck-Installation auf ein anderes System übertragen, egal ob Linux oder Windows.",
       "export": "Exportieren",
-      "exportDescription": "Diese Option exportiert alle deine Roms, BIOS-Dateien und Spielstände auf ein anderes Laufwerk. Emulator-Einstellungen und Steam-Rom-Manager-Einträge werden nicht exportiert.",
+      "exportDescription": "Diese Option exportiert alle deine Roms, BIOS-Dateien und Spielstände auf ein anderes Gerät. Emulator-Einstellungen und Steam-Rom-Manager-Einträge werden nicht exportiert.",
       "import": "Importieren",
-      "importDescription": "Diese Option importiert alle deine Roms, BIOS-Dateien und Spielstände von einem anderen Laufwerk. Emulator-Einstellungen und Steam-Rom-Manager-Einträge werden nicht importiert.",
+      "importDescription": "Diese Option importiert alle deine Roms, BIOS-Dateien und Spielstände von einem anderen Gerät. Emulator-Einstellungen und Steam-Rom-Manager-Einträge werden nicht importiert.",
       "importButton": "Import starten",
       "exportButton": "Export starten",
       "exportBackup": "Backup exportieren",

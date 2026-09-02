@@ -21,12 +21,17 @@
   },
   {
     "title": "Steam Machine improvements",
-    "description": "Improvements to Steam Machine support like 1080P / 4K support in selected emulators",
+    "description": "Improvements to Steam Machine support like default 1080P / 4K setup in selected emulators",
     "image": "true"
   },
   {
     "title": "Ryujinx Gyro",
     "description": "SteamDeckGyroDSU installed automatically when setting up Ryujinx. Steam Deck only, we are investigating in how to add support for the Steam Controller",
     "image": "true"
+  },
+  {
+    "title": "Import / Export",
+    "description": "Export your EmuDeck installation to another device. Steam Deck to Steam Machine, Linux <-> Windows, etc.",
+    "image": "false"
   }
 ]

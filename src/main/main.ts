@@ -144,6 +144,7 @@ if (isDebug) {
 }
 
 const installExtensions = async () => {
+  return;
   const installer = require('electron-devtools-installer');
   const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
   const extensions = ['REACT_DEVELOPER_TOOLS'];
@@ -178,8 +179,6 @@ const shellType =
   os.platform() === 'win32'
     ? {}
     : { shell: bashPath, maxBuffer: 10 * 1024 * 1024 };
-
-console.log({ shellType });
 
 const createWindow = async () => {
   if (isDebug) {
@@ -1044,8 +1043,6 @@ ipcMain.on('get-store', async (event) => {
             feeds: feedsJson,
           };
 
-          console.log({ fullJson });
-
           resolve(fullJson);
         });
       }).then((fullJson: any) => {
@@ -1330,9 +1327,9 @@ app.on('window-all-closed', () => {
   }
 });
 
-app.on('session-created', (session: any) => {
-  console.log({ session });
-});
+// app.on('session-created', (session: any) => {
+//   console.log({ session });
+// });
 ipcMain.on('open-folder', async (event, path) => {
   const bashCommand = `xdg-open ${path}`;
   return exec(`${bashCommand}`, shellType, (error, stdout, stderr) => {
